@@ -16,9 +16,31 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use(express.json())
 
+// rotas
+app.get("/register", (req, res) => {
+    res.render("register")
+})
+
+app.post("/register/save", (req, res) => {
+    const {title, pageqty} = req.body
+
+    const query = `
+        INSERT INTO books (title, pageqty) 
+        VALUES ('${title}', '${pageqty}')
+    `
+    conn.query(query, (error) => {
+        if (error) {
+            console.log(error)
+            return
+        }
+
+        res.redirect("/")
+    })
+})
+
 // rota get
 app.get("/", (req, res) => {
-    res.send("home")
+    res.render("home")
 })
 
 // definindo a conexão com o banco de dados
@@ -27,7 +49,7 @@ const conn = mysql.createConnection({
     database: "nodemysql",
     port: 3306,
     user: "root",
-    password: "root"
+    password: "Veritas@16"
 })
 
 conn.connect((err) => {
