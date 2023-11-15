@@ -48,3 +48,38 @@ button {
   background-color: #ccc;
   cursor: pointer;
 }
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.buttons a {
+  text-decoration: none;
+  display: block;
+  padding: .5rem;
+  border-radius: .5rem;
+}
+
+.buttons .mais {
+  border: 1px solid #007bff;
+  background: #007bff;
+  color: #fff;
+}
+
+.buttons .mais:hover{
+  background: #fff;
+  color: #007bff;
+}
+
+.buttons .editar {
+  border: 1px solid #ffc107;
+  background: #ffc107;
+  color: #000;
+}
+
+.buttons .editar:hover{
+  background: #fff;
+  color: #ffc107;
+}
