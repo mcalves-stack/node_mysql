@@ -21,6 +21,23 @@ app.get("/register", (req, res) => {
     res.render("register")
 })
 
+app.get("/book/:id", (req, res) => {
+    const id = req.params.id;
+
+    const sql = `SELECT * FROM books WHERE id = ${id}`
+
+    conn.query(sql, (error, data) => {
+        if (error) {
+          return console.log(error)
+        }
+
+        const book = data[0]
+
+        res.render("book", {book})
+        
+    })
+})
+
 app.post("/register/save", (req, res) => {
     const {title, pageqty} = req.body
 
