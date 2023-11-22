@@ -17,6 +17,25 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 // rotas
+app.post("/delete", (req, res) => {
+    const {id} = req.body
+
+    const sql = `
+        DELETE FROM books
+        WHERE id = ${id}
+    `
+
+    conn.query(sql, (error) => {
+        if(error) {
+            return console.log(error)
+        }
+
+        res.redirect("/")
+    })
+})
+
+
+
 app.get("/register", (req, res) => {
     res.render("register")
 })
@@ -107,9 +126,9 @@ app.get("/", (req, res) => {
 const conn = mysql.createConnection({
     host: "localhost",
     database: "nodemysql",
-    port: 3306,
+    port: 3307,
     user: "root",
-    password: "Veritas@16"
+    password: "root"
 })
 
 conn.connect((err) => {

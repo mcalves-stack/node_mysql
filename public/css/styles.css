@@ -40,9 +40,8 @@ header ul {
   border-radius: 1rem;
 }
 
-button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
+button{
+  margin-top: 1rem; 
   border-radius: 0.5rem;
   border: none;
   background-color: #ccc;
@@ -55,12 +54,22 @@ button {
   margin-top: 0.5rem;
 }
 
+form .excluir{
+  text-decoration: none;
+  display: block;
+  padding: .5rem;
+  border-radius: .5rem;
+  font-size: 1rem;
+}
+
 .buttons a {
   text-decoration: none;
   display: block;
   padding: .5rem;
   border-radius: .5rem;
+  font-size: 1rem;
 }
+
 
 .buttons .mais {
   border: 1px solid #007bff;
@@ -82,4 +91,15 @@ button {
 .buttons .editar:hover{
   background: #fff;
   color: #ffc107;
+}
+
+.buttons .excluir {
+  border: 1px solid #dc3545;
+  background: #dc3545;
+  color: white;
+}
+
+.buttons .excluir:hover{
+  background: #fff;
+  color: #dc3545;
 }
